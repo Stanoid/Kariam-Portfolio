@@ -38,13 +38,14 @@ const Logo = ({ src }: { src?: string }) => {
     <Link href="/" className="navbar-brand inline-block">
       {logoPath ? (
         <Image
-          width={logo_width.replace("px", "") * 2}
-          height={logo_height.replace("px", "") * 2}
+        width={0}
+        height={0}
+        sizes="100vw"
           src={logoPath}
           alt={title}
           priority
           style={{
-            height: logo_height.replace("px", "") + "px",
+            height: "auto",
             width: logo_width.replace("px", "") + "px",
           }}
         />

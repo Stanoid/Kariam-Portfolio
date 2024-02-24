@@ -1,13 +1,13 @@
 {
   "site": {
-    "title": "Nextplate",
+    "title": "Kariam",
     "base_url": "https://nextplate.netlify.app",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
-    "logo_width": "150",
+    "logo": "/images/logo.svg",
+    "logo_darkmode": "/images/logo-darkmode.svg",
+    "logo_width": "200",
     "logo_height": "27",
     "logo_text": "Nextplate"
   },
@@ -24,7 +24,7 @@
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "Kariam Digital 2024"
   },
 
   "navigation_button": {
