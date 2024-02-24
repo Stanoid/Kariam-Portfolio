@@ -53,3 +53,19 @@ strong {
 code {
   @apply after:border-none;
 }
+
+
+
+
+
+#scrolloff {
+  overflow-y: scroll; /* Adding the ability to scroll */
+}
+
+/* Hiding scrollbar for Chrome, Safari and Opera */
+#scrolloff::webkit-scrollbar {
+    display: none;
+}
+
+
+

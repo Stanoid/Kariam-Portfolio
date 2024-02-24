@@ -1,9 +1,9 @@
 {
-  "name": "nextplate",
+  "name": "kariam",
   "version": "2.2.2",
-  "description": "Nextjs and Tailwindcss boilerplate",
-  "author": "zeon.studio",
-  "license": "MIT",
+  "description": "Kariam Digital company profile",
+  "author": "Kariam digital",
+  "license": "",
   "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "yarn generate-json && next dev",
@@ -33,9 +33,12 @@
     "react-gtm-module": "^2.0.11",
     "react-icons": "^5.0.1",
     "react-lite-youtube-embed": "^2.4.0",
+    "react-scrollbars-custom": "^4.1.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^3.0.1",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "vanta": "^0.5.21",
+    "three": "^0.122.0"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",

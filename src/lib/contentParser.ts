@@ -1,8 +1,8 @@
-import fs from "fs";
+
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import path from "path";
-
+import fs from "fs";
 const contentPath = "src/content";
 
 // Helper function to read file content

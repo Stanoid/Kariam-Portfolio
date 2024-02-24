@@ -5,6 +5,7 @@ import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
+
 import "@/styles/main.scss";
 
 export default function RootLayout({
@@ -13,11 +14,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // import google font css
+
+
+
+
+
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
 
   return (
-    <html suppressHydrationWarning={true} lang="en">
+    <html  suppressHydrationWarning={true} lang="en">
       <head>
         {/* responsive meta */}
         <meta
@@ -47,6 +53,8 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
         <link
           href={`https://fonts.googleapis.com/css2?family=${pf}${
             sf ? "&family=" + sf : ""
@@ -55,14 +63,23 @@ export default function RootLayout({
         />
       </head>
 
-      <body suppressHydrationWarning={true}>
-        <TwSizeIndicator />
+      <body id="scrolloff" style={{overflowX:"scroll"}} suppressHydrationWarning={true}>
+
+
+<TwSizeIndicator />
         <Providers>
           <Header />
           <SearchModal />
-          <main>{children}</main>
+          <main style={{}}>
+
+            {children}
+
+          </main>
           <Footer />
         </Providers>
+
+
+
       </body>
     </html>
   );
