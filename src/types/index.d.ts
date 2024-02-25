@@ -1,3 +1,4 @@
+import { TechStack } from '@/partials/techstack';
 export type RegularPage = {
   frontmatter: {
     title: string;
@@ -57,7 +58,14 @@ export type Testimonial = {
   name: string;
   designation: string;
   avatar: string;
-  content: string;
+  content: Array;
+};
+
+export type TechStack = {
+  name: string;
+  designation: string;
+  avatar: string;
+  content: object;
 };
 
 export type Call_to_action = {

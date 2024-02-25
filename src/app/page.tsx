@@ -4,6 +4,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
+import TechStack from "@/partials/techstack";
 import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
@@ -11,6 +12,7 @@ import Vanta from "@/components/vanta";
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
+  const techstack = getListPage("sections/techstack.md");
   const callToAction = getListPage("sections/call-to-action.md");
   const { frontmatter } = homepage;
   const {
@@ -46,6 +48,9 @@ const Home = () => {
          <Vanta  />
           </div>
       </section>
+
+
+      <TechStack data={techstack} />
 
       {features.map((feature, index: number) => (
         <section
@@ -101,7 +106,7 @@ const Home = () => {
         </section>
       ))}
 
-      <Testimonials data={testimonial} />
+
       <CallToAction data={callToAction} />
     </>
   );
