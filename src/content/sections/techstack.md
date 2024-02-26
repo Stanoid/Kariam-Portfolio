@@ -92,10 +92,24 @@ testimonials:
  name: 'Next.js',
       icon: '/images/next.svg'
       },
+
         {
  name: 'Angular',
       icon: '/images/angular.svg'
       },
+
+       {
+ name: 'JavaScript',
+      icon: '/images/js.svg'
+      },
+
+        {
+ name: 'TypeScript',
+      icon: '/images/ts.svg'
+      },
+
+
+      
       
      
     ]
