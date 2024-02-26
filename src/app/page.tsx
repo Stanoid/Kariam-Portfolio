@@ -64,12 +64,12 @@ const Home = () => {
                   index % 2 !== 0 && "md:order-2"
                 }`}
               >
-                <ImageFallback
+                {/* <ImageFallback
                   src={feature.image}
                   height={480}
                   width={520}
                   alt={feature.title}
-                />
+                /> */}
               </div>
               <div
                 className={`md:col-7 lg:col-6 ${
@@ -81,16 +81,17 @@ const Home = () => {
                   dangerouslySetInnerHTML={markdownify(feature.title)}
                 />
                 <p
+                style={{textAlign:"justify"}}
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
                 />
                 <ul>
-                  {feature.bulletpoints.map((bullet: string) => (
+                  {/* {feature.bulletpoints.map((bullet: string) => (
                     <li className="relative mb-4 pl-6" key={bullet}>
                       <FaCheck className={"absolute left-0 top-1.5"} />
                       <span dangerouslySetInnerHTML={markdownify(bullet)} />
                     </li>
-                  ))}
+                  ))} */}
                 </ul>
                 {feature.button.enable && (
                   <Link

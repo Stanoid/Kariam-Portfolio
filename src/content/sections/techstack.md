@@ -103,30 +103,7 @@ testimonials:
     
     }  
 
-  - name: "Back-end"
-    designation: ""
-    avatar: "/images/avatar-sm.png"
-    content: {data:
-    [
-      {
-      name: 'Node.js',
-      icon: '/images/nodejs.svg'
-      },
-        {
-      name: 'PHP Laravel',
-      icon: '/images/laravel.svg'
-      },
-         {
-      name: 'Spring boot',
-      icon: '/images/spring.svg'
-      },
-      
-     
-      ]
-    
-    
-      }
-
+  
 
 
  
@@ -151,12 +128,43 @@ testimonials:
       icon: '/images/graphql.svg'
       },
 
+        {
+ name: 'PostgreSQL',
+      icon: '/images/postgresql.svg'
+      },
+
       
      
     ]
     
     
     }  
+
+
+  - name: "Back-end"
+    designation: ""
+    avatar: "/images/avatar-sm.png"
+    content: {data:
+    [
+      {
+      name: 'Node.js',
+      icon: '/images/nodejs.svg'
+      },
+        {
+      name: 'PHP Laravel',
+      icon: '/images/laravel.svg'
+      },
+         {
+      name: 'Spring boot',
+      icon: '/images/spring.svg'
+      },
+      
+     
+      ]
+    
+    
+      }
+  
 
 
  

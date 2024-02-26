@@ -38,7 +38,9 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                   )}
                 />
               </div>
-              <div className="col-12">
+              <div style={{
+                height:"100%"
+              }} className="col-12">
                 <Swiper
                   modules={[Autoplay, Pagination]}
                   pagination={{ clickable: true }}
@@ -63,7 +65,10 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                   {data.frontmatter.testimonials.map(
                     (item: Testimonial, index: number) => (
                       <SwiperSlide key={index}>
-                        <div className="rounded-lg bg-theme-light px-7 py-10 dark:bg-darkmode-theme-light">
+                        <div style={{
+                          height:"100%",
+                          minHeight:400
+                        }} className="rounded-lg  bg-theme-light px-7 py-10 dark:bg-darkmode-theme-light">
 
                           {/* <blockquote
                             className="mt-8"
@@ -71,15 +76,41 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                           /> */}
 
 
+<div style={{marginBottom:20}} onClick={()=>{
+
+}} className="mt-11 flex items-center">
+  <div className="text-dark dark:text-white">
+ <FaTools
+ style={{
+  color: "#EB8722",
+  fontSize:17,
+ }}
+ />
+  </div>
+  <div className="ml-2">
+    <h3
+      dangerouslySetInnerHTML={markdownify(item.name)}
+      className="h5 font-primary font-semibold"
+    />
+    <p
+      dangerouslySetInnerHTML={markdownify(
+        item.designation,
+      )}
+      className="text-dark dark:text-white"
+    />
+  </div>
+</div>
+
+
                           <div style={{
                             display:"grid",
+
                             gridTemplateColumns:"auto auto auto",
-                            justifyContent:"center",
-                            alignItems:"center"
+
                           }}>
                           {item.content.data.map(
                     (item: any, index: number) => (
-                     <div style={{margin:15,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} key={index}>
+                     <div className="grayscale-0 dark:grayscale" style={{margin:15,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} key={index}>
                     <Image
                     src={item.icon}
                     width={50}
@@ -105,30 +136,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
 
 
 
-                          <div onClick={()=>{
 
-                          }} className="mt-11 flex items-center">
-                            <div className="text-dark dark:text-white">
-                           <FaTools
-                           style={{
-                            color: "#EB8722",
-                            fontSize:17,
-                           }}
-                           />
-                            </div>
-                            <div className="ml-2">
-                              <h3
-                                dangerouslySetInnerHTML={markdownify(item.name)}
-                                className="h5 font-primary font-semibold"
-                              />
-                              <p
-                                dangerouslySetInnerHTML={markdownify(
-                                  item.designation,
-                                )}
-                                className="text-dark dark:text-white"
-                              />
-                            </div>
-                          </div>
                         </div>
                       </SwiperSlide>
                     ),

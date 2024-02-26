@@ -11,43 +11,47 @@ banner:
 
 # Features
 features:
-  - title: "What's Included in Nextplate"
+  - title: "Custom software development"
     image: "/images/service-1.png"
-    content: "Nextplate is a comprehensive starter template that includes everything you need to get started with your Next project. What's Included in Nextplate"
+    content: "We offer our clients custom software development service tailored to their unique requirements. We understand that pre-made software solutions may not always meet your specific needs. Developed from scratch to ensure full customization "
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Next and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - " "
+      
+     
     button:
-      enable: false
+      enable: true
       label: "Get Started Now"
       link: "#"
 
-  - title: "Discover the Key Features Of Next"
+  - title: "API integration"
     image: "/images/service-2.png"
-    content: "Next is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
-    bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+    content: "We are your go-to experts for API development and integration, catering to all your e-commerce and payment API needs. Seamlessly connecting your systems with the vast array of e-commerce and payment APIs, we empower your business with enhanced functionality and streamlined operations."
+  
     button:
       enable: true
       label: "Get Started Now"
       link: "https://github.com/zeon-studio/nextplate"
 
-  - title: "The Top Reasons to Choose Next for Your Next Project"
+  - title: "Mobile app development"
     image: "/images/service-3.png"
-    content: "With Next, you can build modern and content-focused websites without sacrificing performance or ease of use."
-    bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Next a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+    content: "Unleash the full potential of your business with our mobile app development expertise. Elevate your brand, engage your customers, and stay ahead of the competition. Partner with us today and watch your ideas come to life on every screen."
+  
     button:
-      enable: false
-      label: ""
-      link: ""
+      enable: true
+      label: "Get Started Now"
+      link: "#"
+
+
+  - title: "Maintenance"
+    image: "/images/service-3.png"
+    content: "We specialize in codebase maintenance, ensuring seamless functionality, and enhancing user experience. Our expert team implements comprehensive tests, fixes bugs, and adds new features to keep your software running smoothly."
+  
+    button:
+      enable: true
+      label: "Get Started Now"
+      link: "#"
+      
+      
+ 
+      
 ---
