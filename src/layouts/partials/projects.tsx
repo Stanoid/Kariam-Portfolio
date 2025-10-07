@@ -6,9 +6,10 @@ import { Testimonial,TechStack } from "@/types";
 import Image from "next/image";
 import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
-import { FaCode, FaTools } from "react-icons/fa";
+import { FaCode, FaTools,FaMap,FaCalendar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import projects from "../../../config/projects.json";
+import Link from "next/link";
 
 interface PageData {
   notFound?: boolean;
@@ -48,14 +49,17 @@ const TechStackEl = ({ data }: { data: PageData }) => {
               }} className="col-12">
                 <Swiper
                   modules={[Autoplay, Pagination]}
+
                   pagination={{ clickable: true }}
                   loop={true}
-                  centeredSlides={false}
+                  centeredSlides={true}
+
                   autoplay={{
                     delay: 2500,
-                    disableOnInteraction: false,
+                    disableOnInteraction: true,
+
                   }}
-                  spaceBetween={24}
+                  spaceBetween={14}
                   breakpoints={{
                     768: {
                       slidesPerView: 2,
@@ -119,13 +123,56 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                     alt={item.name}
                     />
 </div>
+
+
 </div>
 
 
+
+<div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600 mb-4 flex-grow">{item.description}</p>
+
+                {/* Meta Data */}
+                <div className="space-y-3 mb-6">
+                  {/* Location */}
+                  <div className="flex items-center text-sm text-gray-500">
+                    <FaMap className="w-4 h-4 mr-2 text-indigo-500 flex-shrink-0" />
+                    <span>{item.client_location}</span>
+                  </div>
+
+                  {/* Date */}
+                  <div className="flex items-center text-sm text-gray-500">
+                    <FaCalendar className="w-4 h-4 mr-2 text-indigo-500 flex-shrink-0" />
+                    <span>Completed on {item.project_date}</span>
+                  </div>
+
+                  {/* Technologies */}
+                  <div className="flex items-start text-sm text-gray-500">
+                    <FaCode className="w-4 h-4 mt-1 mr-2 text-indigo-500 flex-shrink-0" />
+                    <div className="flex flex-wrap gap-2">
+                      {item.technologies.map(tech => (
+                        <span key={tech} className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full shadow-sm">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Link/Call to Action */}
+               
+              </div>
                
 
 
-
+<Link
+                    className="btn btn-primary mt-5"
+                    href={`/projects/view?projectId=${item.id}`}
+                  >
+                    
+                    View
+                  </Link>
 
 
 
