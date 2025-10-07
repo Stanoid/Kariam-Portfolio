@@ -9,6 +9,11 @@ import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 import Vanta from "@/components/vanta";
+import ProjectSlider from "../components/ProjectSlider";
+import OurClients from "../components/OurClients";
+import Projects from "@/partials/projects";
+
+
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
@@ -27,7 +32,6 @@ const Home = () => {
     <>
       <SeoMeta />
 
-
       <section className="section pt-14">
         {/* <div >
           <div className="row justify-center">
@@ -42,16 +46,20 @@ const Home = () => {
           </div>
         </div> */}
 
-<div style={{
-
-          }}>
-         <Vanta  />
-          </div>
+        <div style={{}}>
+          <Vanta />
+        </div>
       </section>
 
-
       <TechStack data={techstack} />
+    
 
+    
+    <Projects data={techstack} />
+
+     
+
+      <OurClients />
       {features.map((feature, index: number) => (
         <section
           key={index}
@@ -81,7 +89,7 @@ const Home = () => {
                   dangerouslySetInnerHTML={markdownify(feature.title)}
                 />
                 <p
-                style={{textAlign:"justify"}}
+                  style={{ textAlign: "justify" }}
                   className="mb-8 text-lg"
                   dangerouslySetInnerHTML={markdownify(feature.content)}
                 />
@@ -106,7 +114,6 @@ const Home = () => {
           </div>
         </section>
       ))}
-
 
       <CallToAction data={callToAction} />
     </>
