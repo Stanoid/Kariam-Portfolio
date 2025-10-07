@@ -12,6 +12,8 @@ import Vanta from "@/components/vanta";
 import ProjectSlider from "../components/ProjectSlider";
 import OurClients from "../components/OurClients";
 import Projects from "@/partials/projects";
+import Partners from "@/partials/partners";
+
 
 
 const Home = () => {
@@ -57,9 +59,9 @@ const Home = () => {
     
     <Projects data={techstack} />
 
-     
+   <Partners data={techstack} />  
 
-      <OurClients />
+    
       {features.map((feature, index: number) => (
         <section
           key={index}

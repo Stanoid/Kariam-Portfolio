@@ -105,18 +105,14 @@ const TechStackEl = ({ data }: { data: PageData }) => {
     >{
       item.title
     }</h3>
-    <p
   
-      className="text-dark dark:text-white"
-    >
-      {item.description}
-    </p>
 
   </div>
 
-  <div className="w-full  rounded-md bg-red-50 ">
+  <div className="w-full  rounded-md ">
  <Image
-                    src={item.client_logo}
+                    src={item.image}
+                    className="rounded-md"
                     width={200}
                     height={0}
                     style={{height:"auto"}}
@@ -130,8 +126,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
 
 
 <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4 flex-grow">{item.description}</p>
+                <p className=" mb-4 flex-grow">{item.description}</p>
 
                 {/* Meta Data */}
                 <div className="space-y-3 mb-6">
@@ -165,6 +160,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
               </div>
                
 
+<div className="flex justify-end">
 
 <Link
                     className="btn btn-primary mt-5"
@@ -173,6 +169,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                     
                     View
                   </Link>
+</div>
 
 
 
