@@ -6,9 +6,9 @@ import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { IoSearch } from "react-icons/io5";
-
+import { useLanguage } from "@/context/lanContext";
 //  child navigation link interface
 export interface IChildNavigationLink {
   name: string;
@@ -24,12 +24,17 @@ export interface INavigationLink {
 }
 
 const Header = () => {
+  const { lang, setLang } = useLanguage();
   // distructuring the main menu from menu object
   const { main }: { main: INavigationLink[] } = menu;
   const { navigation_button, settings } = config;
   // get current path
   const pathname = usePathname();
 
+
+  const toggleLang = () => {
+    setLang(lang === "en" ? "ar" : "en");
+  };
   // scroll to top on route change
   useEffect(() => {
     window.scroll(0, 0);
@@ -148,6 +153,12 @@ const Header = () => {
               <IoSearch />
             </button>
           )}
+             <button
+        onClick={toggleLang}
+        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+      >
+        {lang === "en" ? "AR" : "EN"} {/* Shows the language you’ll switch to */}
+      </button>
           <ThemeSwitcher className="mr-5" />
           {navigation_button.enable && (
             <Link

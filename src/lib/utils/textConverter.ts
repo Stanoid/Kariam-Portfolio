@@ -1,6 +1,8 @@
 import { slug } from "github-slugger";
 import { marked } from "marked";
 
+type Lang = "en" | "ar";
+
 // slugify
 export const slugify = (content: string) => {
   return slug(content);
@@ -52,11 +54,32 @@ const htmlEntityDecoder = (htmlWithEntities: string): string => {
     "&quot;": '"',
     "&#39;": "'",
   };
-  let htmlWithoutEntities: string = htmlWithEntities.replace(
+  return htmlWithEntities.replace(
     /(&amp;|&lt;|&gt;|&quot;|&#39;)/g,
-    (entity: string): string => {
-      return entityList[entity];
-    },
+    (entity: string) => entityList[entity]
   );
-  return htmlWithoutEntities;
+};
+
+/**
+ * Get the correct language field from a bilingual object
+ * e.g. input: { title: "Hello", title_ar: "مرحبا" }, lang: "ar"
+ * returns: "مرحبا"
+ */
+export const pickLang = (obj: any, lang: Lang = "en"): any => {
+  if (typeof obj !== "object" || obj === null) return obj;
+
+  const result: any = Array.isArray(obj) ? [] : {};
+  for (const key in obj) {
+    if (lang === "ar" && key.endsWith("_ar")) {
+      const originalKey = key.replace("_ar", "");
+      result[originalKey] = obj[key];
+    } else if (!key.endsWith("_ar")) {
+      if (typeof obj[key] === "object") {
+        result[key] = pickLang(obj[key], lang);
+      } else {
+        result[key] = obj[key];
+      }
+    }
+  }
+  return result;
 };

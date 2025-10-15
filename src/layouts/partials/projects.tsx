@@ -1,190 +1,118 @@
 "use client";
 
-import ImageFallback from "@/helpers/ImageFallback";
-import { markdownify } from "@/lib/utils/textConverter";
-import { Testimonial,TechStack } from "@/types";
 import Image from "next/image";
-import "swiper/css";
-import { Autoplay, Pagination } from "swiper/modules";
-import { FaCode, FaTools,FaMap,FaCalendar } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import projects from "../../../config/projects.json";
+import { Autoplay, Pagination } from "swiper/modules";
 import Link from "next/link";
+import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import projects from "../../../config/projects.json";
+import "swiper/css";
+import "swiper/css/pagination";
 
-interface PageData {
-  notFound?: boolean;
-  content?: string;
-  frontmatter: {
-    enable?: boolean;
-    title: string;
-    description?: string;
-    testimonials: Array<Testimonial>;
-  };
-}
-
-const TechStackEl = ({ data }: { data: PageData }) => {
+export default function OrigamiCraneProjects() {
   return (
-    <>
-      {
-        <section className="section">
-          <div className="container">
-            <div className="row">
-              <div className="mx-auto mb-12 text-left md:col-10 lg:col-8 xl:col-6">
-                <h2
-                 
-                  className="mb-4"
+    <section className="bg-white py-28">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-light tracking-tight mb-3">Our Projects</h2>
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            Projects unfold like origami cranes — clean folds, subtle wings, and refined layers.
+          </p>
+          <div className="mt-6 w-20 h-[2px] bg-gray-900 mx-auto"></div>
+        </div>
+
+        {/* Slider */}
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          autoplay={{ delay: 7000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          spaceBetween={50}
+          loop
+          slidesPerView={1}
+        >
+          {projects.map((item, i) => (
+            <SwiperSlide key={item.id}>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: i * 0.2 }}
+                className={`grid md:grid-cols-2 gap-12 items-center ${
+                  i % 2 === 1 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Crane Origami Image */}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="relative rounded-2xl overflow-hidden bg-white border border-gray-100"
                 >
-                  Our Projects
-                </h2>
-                
-                <p
-                 
-                >
-                  Explore our diverse portfolio showcasing innovative solutions
-                  across various industries.
-                </p>
-              </div>
-              <div style={{
-                height:"100%"
-              }} className="col-12">
-                <Swiper
-                  modules={[Autoplay, Pagination]}
+                  {/* Subtle crane fold overlay */}
+                  {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                    <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-white/50 transform -rotate-6 origin-top-left"></div>
+                    <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-white/50 transform rotate-6 origin-bottom-right"></div>
+                  </div> */}
 
-                  pagination={{ clickable: true }}
-                  loop={true}
-                  centeredSlides={true}
-
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: true,
-
-                  }}
-                  spaceBetween={14}
-                  breakpoints={{
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    992: {
-                      slidesPerView: 3,
-                     
-                      
-                    },
-                  }}
-                >
-
-
-                  {projects.map(
-                    (item: any, index: number) => (
-                      <SwiperSlide key={index}>
-                        <div style={{
-                          height:"100%",
-                          minHeight:50
-                        }} className="rounded-lg  bg-theme-light px-7 py-10 dark:bg-darkmode-theme-light">
-
-                          {/* <blockquote
-                            className="mt-8"
-                            dangerouslySetInnerHTML={markdownify(item.content)}
-                          /> */}
-
-
-<div style={{marginBottom:20}} onClick={()=>{
-
-}} className="mt-11 flex items-start">
-  <div className="text-dark dark:text-white">
- <FaCode
- style={{
-  color: "#EB8722",
-  fontSize:17,
- }}
- />
-  </div>
-  <div className="ml-2">
-    <h3
-   
-      className="h5 font-primary font-semibold"
-    >{
-      item.title
-    }</h3>
-  
-
-  </div>
-
-  <div className="w-full  rounded-md ">
- <Image
+                  <Image
                     src={item.image}
-                    className="rounded-md"
-                    width={200}
-                    height={0}
-                    style={{height:"auto"}}
-                    alt={item.name}
-                    />
-</div>
+                    alt={item.title}
+                    width={1000}
+                    height={600}
+                    className="w-full h-[400px] md:h-[400px] object-contain"
+                  />
 
+                  {/* Flap corners */}
+                  <div className="absolute top-0 right-0 w-14 h-14 bg-white/60 border-t border-r border-gray-200 rotate-45 origin-top-right"></div>
+                  <div className="absolute bottom-0 left-0 w-14 h-14 bg-white/60 border-b border-l border-gray-200 -rotate-45 origin-bottom-left"></div>
+                </motion.div>
 
-</div>
+                {/* Text Content */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  className="space-y-5"
+                >
+                  <span className="uppercase tracking-[0.25em] text-sm text-gray-400">
+                    Featured Project
+                  </span>
+                  <h3 className="text-4xl md:text-5xl font-light">{item.title}</h3>
+                  <p className="text-gray-500 text-lg max-w-lg">{item.description}</p>
 
-
-
-<div className="p-6 flex flex-col flex-grow">
-                <p className=" mb-4 flex-grow">{item.description}</p>
-
-                {/* Meta Data */}
-                <div className="space-y-3 mb-6">
-                  {/* Location */}
-                  <div className="flex items-center text-sm text-gray-500">
-                    <FaMap className="w-4 h-4 mr-2 text-indigo-500 flex-shrink-0" />
-                    <span>{item.client_location}</span>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {item.technologies.map((tech: string) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1.5 border border-gray-200 rounded-full text-sm text-gray-600 hover:text-[#EB8722] hover:border-[#EB8722] transition-all duration-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Date */}
-                  <div className="flex items-center text-sm text-gray-500">
-                    <FaCalendar className="w-4 h-4 mr-2 text-indigo-500 flex-shrink-0" />
-                    <span>Completed on {item.project_date}</span>
+                  <div className="flex items-center gap-6 text-sm text-gray-400 pt-6">
+                    <span className="flex items-center gap-2">
+                      <FaMapMarkerAlt className="text-[#EB8722]" />
+                      {item.client_location}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <FaCalendarAlt className="text-[#EB8722]" />
+                      {item.project_date}
+                    </span>
                   </div>
 
-                  {/* Technologies */}
-                  <div className="flex items-start text-sm text-gray-500">
-                    <FaCode className="w-4 h-4 mt-1 mr-2 text-indigo-500 flex-shrink-0" />
-                    <div className="flex flex-wrap gap-2">
-                      {item.technologies.map(tech => (
-                        <span key={tech} className="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full shadow-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Link/Call to Action */}
-               
-              </div>
-               
-
-<div className="flex justify-end">
-
-<Link
-                    className="btn btn-primary mt-5"
+                  <Link
                     href={`/projects/view?projectId=${item.id}`}
+                    className="inline-block mb-44 text-[#EB8722] font-medium border-b border-transparent hover:border-[#EB8722] transition-all duration-500 pt-4"
                   >
-                    
-                    View
+                    View Project
                   </Link>
-</div>
-
-
-
-                        </div>
-                      </SwiperSlide>
-                    ),
-                  )}
-                </Swiper>
-              </div>
-            </div>
-          </div>
-        </section>
-      }
-    </>
+                </motion.div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
   );
-};
-
-export default TechStackEl;
+}

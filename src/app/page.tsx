@@ -54,14 +54,14 @@ const Home = () => {
       </section>
 
       <TechStack data={techstack} />
-    
 
-    
+
+
     <Projects data={techstack} />
 
-   <Partners data={techstack} />  
+   <Partners data={techstack} />
 
-    
+
       {features.map((feature, index: number) => (
         <section
           key={index}

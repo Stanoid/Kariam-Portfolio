@@ -1,6 +1,7 @@
 import SearchModal from "@/components/SearchModal";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
+import { LanguageProvider } from "@/context/lanContext";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
 import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
@@ -65,6 +66,7 @@ export default function RootLayout({
 
       <body id="scrolloff" style={{overflowX:"scroll"}} suppressHydrationWarning={true}>
 
+<LanguageProvider>
 
 <TwSizeIndicator />
         <Providers>
@@ -72,11 +74,13 @@ export default function RootLayout({
           <SearchModal />
           <main style={{}}>
 
-            {children}
+
+              {children}
 
           </main>
           <Footer />
         </Providers>
+  </LanguageProvider>
 
 
 
