@@ -59,7 +59,7 @@ const Home = () => {
 
     <Projects  />
 
-   <Partners data={techstack} />
+   <Partners />
 
 
       {features.map((feature, index: number) => (
@@ -67,7 +67,7 @@ const Home = () => {
           key={index}
           className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
         >
-          <div className="container bg-red-400">
+          <div className="container ">
             <div className="row items-center justify-between">
               <div
                 className={`mb:md-0 mb-6 md:col-5 ${
