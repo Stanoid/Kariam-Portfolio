@@ -10,7 +10,13 @@ import projects from "../../../config/projects.json";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function OrigamiCraneProjects() {
+
+interface ori {
+  data:any
+}
+  
+
+export default function OrigamiCraneProjects<ori>() {
   return (
     <section className="bg-white py-28">
       <div className="max-w-7xl mx-auto px-6">
