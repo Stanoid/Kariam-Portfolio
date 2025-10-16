@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaCalendar, FaExternalLinkAlt, FaMap, FaUser } from "react-icons/fa";
 import projects from "../../../../config/projects.json";
 
@@ -21,6 +21,7 @@ const ProjectDetails = () => {
   }
 
   return (
+    <React.Suspense>
     <section className="min-h-screen py-12 md:py-24 font-inter">
     <div className="container mx-auto px-4 max-w-7xl">
       {/* Breadcrumb / Back Button (Placeholder) */}
@@ -148,7 +149,9 @@ const ProjectDetails = () => {
       `}
     </style>
   </section>
+  </React.Suspense>
   );
+  
 };
 
 export default ProjectDetails;
