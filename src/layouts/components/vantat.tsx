@@ -7,7 +7,6 @@ import { markdownify } from "@/lib/utils/textConverter";
 import Image from "next/image";
 import { FaAngleDoubleDown } from "react-icons/fa";
 import Link from "next/link";
-import BIRD from "vanta/dist/vanta.net.min";
 import lg from "../../../public/images/logo-darkmode.svg"
 import Logo from "./Logo";
 import * as THREE from "three";

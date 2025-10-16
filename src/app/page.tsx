@@ -1,3 +1,4 @@
+
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -10,19 +11,13 @@ import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 import ProjectSlider from "../components/ProjectSlider";
 import OurClients from "../components/OurClients";
+import Vanta from "@/components/vanta";
 import Projects from "@/partials/projects";
 import Partners from "@/partials/partners";
 
 import dynamic from 'next/dynamic';
 
 // 1. Define the component using dynamic import, setting ssr: false
-const SplineClientComponent = dynamic(
-  () => import('@/components/vanta'),
-  { 
-    ssr: false, // 👈 This tells Next.js NOT to render it on the server
-    loading: () => <p>Loading 3D model...</p> // Optional loading state
-  }
-);
 
 
 
@@ -59,7 +54,7 @@ const Home = () => {
         </div> */}
 
         <div style={{minHeight:"100vh"}}>
-        <SplineClientComponent />
+        <Vanta />
         </div>
       </section>
 
