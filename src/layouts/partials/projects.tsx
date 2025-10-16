@@ -10,13 +10,7 @@ import projects from "../../../config/projects.json";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
-interface ori {
-  data:any
-}
-  
-
-export default function OrigamiCraneProjects<ori>() {
+export default function Projects() {
   return (
     <section className="bg-white py-28">
       <div className="max-w-7xl mx-auto px-6">
@@ -34,7 +28,7 @@ export default function OrigamiCraneProjects<ori>() {
           modules={[Autoplay, Pagination]}
           autoplay={{ delay: 7000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
-          spaceBetween={50}
+          spaceBetween={5}
           loop
           slidesPerView={1}
         >
@@ -51,7 +45,7 @@ export default function OrigamiCraneProjects<ori>() {
                 {/* Crane Origami Image */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="relative rounded-2xl overflow-hidden bg-white border border-gray-100"
+                  // className="relative rounded-2xl overflow-hidden bg-white border border-gray-100"
                 >
                   {/* Subtle crane fold overlay */}
                   {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -64,12 +58,12 @@ export default function OrigamiCraneProjects<ori>() {
                     alt={item.title}
                     width={1000}
                     height={600}
-                    className="w-full h-[400px] md:h-[400px] object-contain"
+                    className="w-full h-[450px] md:h-[400px] object-contain"
                   />
 
                   {/* Flap corners */}
-                  <div className="absolute top-0 right-0 w-14 h-14 bg-white/60 border-t border-r border-gray-200 rotate-45 origin-top-right"></div>
-                  <div className="absolute bottom-0 left-0 w-14 h-14 bg-white/60 border-b border-l border-gray-200 -rotate-45 origin-bottom-left"></div>
+                  {/* <div className="absolute top-0 right-0 w-14 h-14 bg-white/60 border-t border-r border-gray-200 rotate-45 origin-top-right"></div> */}
+                  {/* <div className="absolute bottom-0 left-0 w-14 h-14 bg-white/60 border-b border-l border-gray-200 -rotate-45 origin-bottom-left"></div> */}
                 </motion.div>
 
                 {/* Text Content */}

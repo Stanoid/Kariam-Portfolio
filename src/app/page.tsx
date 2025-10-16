@@ -57,7 +57,7 @@ const Home = () => {
 
 
 
-    <Projects  />
+    <Projects data={techstack} />
 
    <Partners data={techstack} />
 
@@ -67,7 +67,7 @@ const Home = () => {
           key={index}
           className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
         >
-          <div className="container">
+          <div className="container bg-red-400">
             <div className="row items-center justify-between">
               <div
                 className={`mb:md-0 mb-6 md:col-5 ${

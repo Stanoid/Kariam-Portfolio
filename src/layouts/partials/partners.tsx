@@ -1,130 +1,66 @@
 "use client";
+import React from "react";
+import projects from "../../../config/projects.json"; // ✅ your local data file
 
-import ImageFallback from "@/helpers/ImageFallback";
-import { markdownify } from "@/lib/utils/textConverter";
-import { Testimonial,TechStack } from "@/types";
-import Image from "next/image";
-import "swiper/css";
-import { Autoplay, Pagination } from "swiper/modules";
-import { FaCode, FaTools,FaMap,FaCalendar } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import projects from "../../../config/projects.json";
-import Link from "next/link";
-
-interface PageData {
-  notFound?: boolean;
-  content?: string;
-  frontmatter: {
-    enable?: boolean;
-    title: string;
-    description?: string;
-    testimonials: Array<Testimonial>;
-  };
-}
-
-const TechStackEl = ({ data }: { data: PageData }) => {
+export default function PartnersSlider() {
   return (
-    <>
-      {
-        <section className="section">
-          <div className="container">
-            <div className="row">
-              <div className="mx-auto mb-12 text-left md:col-10 lg:col-8 xl:col-6">
-                <h2
-                 
-                  className="mb-4"
-                >
-                  Our Clients
-                </h2>
-                
-                <p
-                 
-                >
+    <section className="relative bg-white py-24 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-16">
+          Our Trusted Partners
+        </h2>
 
-                  
-                </p>
-              </div>
-              <div style={{
-                height:"100%"
-              }} className="col-12">
-                <Swiper
-                  modules={[Autoplay, Pagination]}
+        {/* Infinite scroll row */}
+        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_80px,_black_calc(100%-80px),transparent_100%)]">
+          {/* Original logos */}
+          <ul className="flex items-center [&_li]:mx-10 [&_img]:max-w-none animate-scroll">
+            {projects.map((item, i) => (
+              <li key={i} className="flex flex-col items-center space-y-2">
+                <img
+                  src={item.client_logo}
+                  alt={item.client}
+                  className="h-20 w-auto opacity-90 hover:opacity-100 transition"
+                />
+                <p className="text-gray-700 text-sm font-medium">{item.client}</p>
+              </li>
+            ))}
+          </ul>
 
-                  pagination={{ clickable: true }}
-                  loop={true}
-                  centeredSlides={false}
+          {/* Duplicate list for seamless infinite scroll */}
+          <ul
+            className="flex items-center [&_li]:mx-10 [&_img]:max-w-none animate-scroll"
+            aria-hidden="true"
+          >
+            {projects.map((item, i) => (
+              <li key={`dup-${i}`} className="flex flex-col items-center space-y-2">
+                <img
+                  src={item.client_logo}
+                  alt=""
+                  className="h-20 w-40 object-contain opacity-90 hover:opacity-100 transition"
+                  />
+                <p className="text-gray-700 text-sm font-medium">{item.client}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
-                  autoplay={{
-                    delay: 700,
-                    disableOnInteraction: true,
-
-                  }}
-                  spaceBetween={24}
-                  breakpoints={{
-                    768: {
-                      slidesPerView: 2,
-                    },
-                    992: {
-                      slidesPerView: 6,
-                     
-                      
-                    },
-                  }}
-                >
-
-
-                  {projects.map(
-                    (item: any, index: number) => (
-                      <SwiperSlide key={index}>
-                        <div style={{
-                        
-                        }} className=" ">
-
-                          {/* <blockquote
-                            className="mt-8"
-                            dangerouslySetInnerHTML={markdownify(item.content)}
-                          /> */}
-
-
-<div style={{marginBottom:0}} onClick={()=>{
-
-}} className=" flex flex-col gap-y-2 items-start">
-
-  <div className="w-full  rounded-md ">
- <Image
-                    src={item.client_logo}
-                    className="rounded-2xl shadow-md"
-               width={100}
-               height={100}
-                    style={{height:"auto",width:"100%"}}
-                    alt={item.client}
-                    />
-</div>
-
-{item.client}
-</div>
-
-
-
-
-               
-
-
-
-
-
-                        </div>
-                      </SwiperSlide>
-                    ),
-                  )}
-                </Swiper>
-              </div>
-            </div>
-          </div>
-        </section>
-      }
-    </>
+      <style jsx>{`
+        @keyframes scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 35s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
   );
-};
-
-export default TechStackEl;
+}

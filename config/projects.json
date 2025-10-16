@@ -7,7 +7,7 @@
       "details": "A modern eCommerce solution with product filters, dynamic categories, and Arabic/English support for Algerian customers.",
       "link": "/projects/minimoon-algeria",
       "client": "Minimoon",
-      "client_logo": "/images/minimoon-logo.png",
+      "client_logo": "/images/minimoon-logo.svg",
       "client_location": "Algeria",
       "project_date": "2024-02-18",
       "technologies": ["Next.js", "Strapi", "Tailwind CSS", "PostgreSQL"]
@@ -19,8 +19,8 @@
       "image": "/images/profix.png",
       "details": "Built with Laravel and Filament, Profix enables admins, merchants, and salesmen to manage customer maintenance plans easily.",
       "link": "/projects/profix",
-      "client": "Aqua7aja",
-      "client_logo": "/images/profix-logo.png",
+      "client": "profix",
+      "client_logo": "/images/profix-logo.svg",
       "client_location": "Khartoum, Sudan",
       "project_date": "2024-04-10",
       "technologies": ["Laravel", "Filament", "MySQL", "Livewire"]
@@ -51,19 +51,7 @@
       "project_date": "2023-12-05",
       "technologies": ["WordPress", "Elementor", "Custom CSS"]
     },
-    {
-      "id": "5",
-      "title": "Portal Nafir",
-      "description": "Mentorship platform connecting mentors with mentees across Africa and the Gulf.",
-      "image": "/images/nafir.png",
-      "details": "Developed with Next.js, TRPC, and Tailwind CSS, this portal manages user roles and mentor-mentee interactions.",
-      "link": "/projects/portal-nafir",
-      "client": "Nafir Network",
-      "client_logo": "/images/nafir-logo.png",
-      "client_location": "Ethiopia",
-      "project_date": "2024-05-20",
-      "technologies": ["Next.js", "TRPC", "Tailwind CSS", "PostgreSQL"]
-    },
+
     {
       "id": "6",
       "title": "Dantech Electromechanical",
@@ -98,7 +86,7 @@
       "details": "Smart Sudan helps merchants track inventory, sales, and employee performance with an intuitive dashboard and real-time reports. Designed for scalability and offline-first operation.",
       "link": "/projects/smart-sudan-pos",
       "client": "Smart Sudan",
-      "client_logo": "/images/smartsd-logo.svg    ",
+      "client_logo": "/images/smartsd-logo.jpg",
       "client_location": "Khartoum, Sudan",
       "project_date": "2024-10-01",
       "technologies": ["Laravel", "React", "Tailwind CSS", "MySQL", "API Integration"]
