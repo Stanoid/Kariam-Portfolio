@@ -48,7 +48,7 @@ const Home = () => {
           </div>
         </div> */}
 
-        <div style={{}}>
+        <div style={{minHeight:"100vh"}}>
           <Vanta />
         </div>
       </section>

@@ -1,4 +1,4 @@
-import Spline from '@splinetool/react-spline/next';
+'use client'
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
@@ -12,35 +12,56 @@ import lg from "../../../public/images/logo-darkmode.svg"
 import Logo from "./Logo";
 import * as THREE from "three";
 import Hero from "./vanta";
+
 export default function Home() {
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const vantaRef = useRef(null);
+  useEffect(() => {
+    if (!vantaEffect) {
+      // setVantaEffect(
+      //   BIRD({
+      //     el: vantaRef.current,
+      //     color:"#FF9933",
+      //     mouseControls: true,
+      //     touchControls: true,
+      //     gyroControls: false,
+      //     minHeight: 200.00,
+      //     minWidth: 200.00,
+      //     scale: 1.00,
+      //     scaleMobile: 1.00,
+      //     points: 20.00,
+      //     maxDistance: 20.00,
+      //     spacing: 25.00
+      //   })
+      // );
+    }
+    return () => {
+      // if (vantaEffect) vantaEffect.destory();
+    };
+  }, [vantaEffect]);
   return (
-    <main  style={{width:"100%",
-      minHeight:"100vh",
+    <div >
+
+
+      <main style={{width:"100vw",
       height:"100vh",position:"absolute",top:0,zIndex:100,overflow:"hidden",
       display:"flex",
-      overflowX:"hidden",
-      overflowY:"hidden",
       justifyContent:"center",
       alignItems:"center",
       }}>
-
-
-<div style={{
-  pointerEvents:"none",
-  position:"absolute",
-  top:0,left:0,
-          backgroundColor:"rgba(0,0,0,0)",
+        <div style={{
+          backgroundColor:"rgba(0,0,0,0.7)",
           width:"100%",
           color:"white",
           height:"100%",
          display:"flex",
          flexDirection:"column",
-padding:16,
-         justifyContent:"space-between",
-         alignItems:"start",
+
+         justifyContent:"space-around",
+         alignItems:"center",
 
         }}>
-  <div className='flex w-full items-start '>
+  <div>
   <Image
         width={0}
         height={0}
@@ -55,20 +76,18 @@ padding:16,
         />
   </div>
 
-  <div style={{display:"flex",alignItems:"start",flexDirection:"column",justifyContent:"center"}}>
+  <div style={{display:"flex",alignItems:"center",flexDirection:"column",justifyContent:"center"}}>
   <h1  style={{
-    
-    fontSize:40,
+    textAlign:"center",
+    fontSize:30,
     color:"white",
-    
+    padding:25
   }}
                   className="mb-4"
-            
+                  dangerouslySetInnerHTML={markdownify("Supercharge your business with custom software solutions.")}
 
 
-  >
-    Supercharge your business with <br/> custom software solutions.
-  </h1>
+  />
 
 <Link
                     className="btn btn-primary mt-5"
@@ -92,17 +111,23 @@ padding:16,
 
 
 
-<div  style={{marginBottom:10,fontSize:20, color:"#FF9933",}}>
+<div style={{marginBottom:10,fontSize:20, color:"#FF9933",}}>
 <FaAngleDoubleDown/>
 </div>
 Scroll down
   </div>
 
         </div>
-        <Spline
-        scene="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
-      />
-   
-    </main>
+
+      </main>
+      <div style={{
+        backgroundColor:"#1B112E",
+        width:"100%",
+        height:"83vh",
+        borderRadius:5
+      }}>
+
+      </div>
+    </div>
   );
 }

@@ -63,7 +63,7 @@ code {
 }
 
 /* Hiding scrollbar for Chrome, Safari and Opera */
-#scrolloff::webkit-scrollbar {
+*::webkit-scrollbar {
     display: none;
 }
 
