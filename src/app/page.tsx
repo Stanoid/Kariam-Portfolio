@@ -57,7 +57,7 @@ const Home = () => {
 
 
 
-    <Projects data={techstack} />
+    <Projects  />
 
    <Partners data={techstack} />
 
