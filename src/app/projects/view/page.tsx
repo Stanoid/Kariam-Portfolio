@@ -25,7 +25,7 @@ const ProjectDetails = () => {
     <div className="container mx-auto px-4 max-w-7xl">
       {/* Breadcrumb / Back Button (Placeholder) */}
       <div className="mb-8 opacity-0 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-        <a href="#" className="flex items-center text-primary hover:text-primary transition-colors">
+        <a href="/" className="flex items-center text-primary hover:text-primary transition-colors">
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
           Back to Portfolio
         </a>
