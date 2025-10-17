@@ -11,7 +11,7 @@ import lg from "../../../public/images/logo-darkmode.svg"
 import Logo from "./Logo";
 import * as THREE from "three";
 import Hero from "./vanta";
-import SplineViewerComponent from "./vantael";
+import SplineViewerComponent from './vantat';
 export default function Home() {
   return (
     <main  style={{width:"100%",
@@ -80,7 +80,7 @@ padding:16,
 
   </div>
 
-  <div className="w-full" style={{
+  <div style={{
     display:"flex",
     color:"white",
     fontSize:15,
@@ -93,21 +93,16 @@ padding:16,
 
 
 
-<div className="w-full flex flex-col items-center justify-center">
 <div  style={{marginBottom:10,fontSize:20, color:"#FF9933",}}>
 <FaAngleDoubleDown/>
 </div>
 Scroll down
-</div>
-
-
   </div>
 
         </div>
-        
-        <SplineViewerComponent 
-          url="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
-        />
+        <SplineViewerComponent
+        url="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
+      />
    
     </main>
   );
