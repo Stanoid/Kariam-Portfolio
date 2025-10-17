@@ -43,12 +43,12 @@ const PostSidebar = ({
             {tags.map((tag: string) => {
               return (
                 <li className="inline-block" key={tag}>
-                  <Link
+                  <span
                     className="m-1 block rounded bg-white px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark"
-                    href={`/tags/${tag}`}
+                  
                   >
                     {humanize(tag)}
-                  </Link>
+                  </span>
                 </li>
               );
             })}

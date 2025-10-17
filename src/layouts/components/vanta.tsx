@@ -1,4 +1,3 @@
-import Spline from '@splinetool/react-spline/next';
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
@@ -12,7 +11,7 @@ import lg from "../../../public/images/logo-darkmode.svg"
 import Logo from "./Logo";
 import * as THREE from "three";
 import Hero from "./vanta";
-import SplineViewerComponent from './vantat';
+import SplineViewerComponent from "./vantael";
 export default function Home() {
   return (
     <main  style={{width:"100%",
@@ -81,7 +80,7 @@ padding:16,
 
   </div>
 
-  <div style={{
+  <div className="w-full" style={{
     display:"flex",
     color:"white",
     fontSize:15,
@@ -94,16 +93,21 @@ padding:16,
 
 
 
+<div className="w-full flex flex-col items-center justify-center">
 <div  style={{marginBottom:10,fontSize:20, color:"#FF9933",}}>
 <FaAngleDoubleDown/>
 </div>
 Scroll down
+</div>
+
+
   </div>
 
         </div>
-        <SplineViewerComponent
-        url="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
-      />
+        
+        <SplineViewerComponent 
+          url="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
+        />
    
     </main>
   );
