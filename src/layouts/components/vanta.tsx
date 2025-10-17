@@ -12,6 +12,7 @@ import lg from "../../../public/images/logo-darkmode.svg"
 import Logo from "./Logo";
 import * as THREE from "three";
 import Hero from "./vanta";
+import SplineViewerComponent from './vantat';
 export default function Home() {
   return (
     <main  style={{width:"100%",
@@ -29,6 +30,7 @@ export default function Home() {
   pointerEvents:"none",
   position:"absolute",
   top:0,left:0,
+  zIndex:110,
           backgroundColor:"rgba(0,0,0,0)",
           width:"100%",
           color:"white",
@@ -99,8 +101,8 @@ Scroll down
   </div>
 
         </div>
-        <Spline
-        scene="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
+        <SplineViewerComponent
+        url="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
       />
    
     </main>
