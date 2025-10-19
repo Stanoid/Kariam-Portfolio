@@ -28,6 +28,7 @@ export default function Home() {
   pointerEvents:"none",
   position:"absolute",
   top:0,left:0,
+  zIndex:110,
           backgroundColor:"rgba(0,0,0,0)",
           width:"100%",
           color:"white",
