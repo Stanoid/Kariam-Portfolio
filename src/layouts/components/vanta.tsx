@@ -1,4 +1,3 @@
-import Spline from '@splinetool/react-spline/next';
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useEffect, useRef, useState } from "react";
@@ -11,7 +10,7 @@ import BIRD from "vanta/dist/vanta.net.min";
 import lg from "../../../public/images/logo-darkmode.svg"
 import Logo from "./Logo";
 import * as THREE from "three";
-import Hero from "./vanta";
+import SplineViewerComponent from './vantat';
 export default function Home() {
   return (
     <main  style={{width:"100%",
@@ -99,9 +98,9 @@ Scroll down
   </div>
 
         </div>
-        <Spline
-        scene="https://prod.spline.design/QmwB5DdOd06Qtmf8/scene.splinecode" 
-      />
+        <SplineViewerComponent
+        url="https://prod.spline.design/d-FOn1wGHD0GsEFe/scene.splinecode" 
+        />
    
     </main>
   );
