@@ -7,7 +7,7 @@ const nextConfig = {
   trailingSlash: config.site.trailing_slash,
   output: 'standalone',
   images: {
-    domains: ['via.placeholder.com'],
+    domains: ['via.placeholder.com','picsum.photos'],
   },
 };
 
