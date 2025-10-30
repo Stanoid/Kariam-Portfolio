@@ -1,36 +1,27 @@
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
-import CallToAction from "@/partials/CallToAction";
 import SeoMeta from "@/partials/SeoMeta";
-import Testimonials from "@/partials/Testimonials";
-import TechStack from "@/partials/techstack";
 import { Button, Feature } from "@/types";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
-import ProjectSlider from "../components/ProjectSlider";
-import OurClients from "../components/OurClients";
-import Projects from "@/partials/projects";
+import { FaWhatsapp } from "react-icons/fa";
+
+// Component Imports (alphabetical for clean imports)
+import CallToAction from "@/partials/CallToAction";
+import FeatureGrid from "@/partials/feat";
 import Partners from "@/partials/partners";
-
-import dynamic from 'next/dynamic';
-
-// 1. Define the component using dynamic import, setting ssr: false
-const SplineClientComponent = dynamic(
-  () => import('@/components/vanta'),
-  { 
-    ssr: false, // 👈 This tells Next.js NOT to render it on the server
-    loading: () => <p>Loading 3D model...</p> // Optional loading state
-  }
-);
-
-
+import Projects from "@/partials/projects";
+import TechStack from "@/partials/techstack";
+import Testimonials from "@/partials/Testimonials";
+import Vanta from "@/components/vanta";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
   const testimonial = getListPage("sections/testimonial.md");
   const techstack = getListPage("sections/techstack.md");
   const callToAction = getListPage("sections/call-to-action.md");
+
   const { frontmatter } = homepage;
   const {
     banner,
@@ -44,90 +35,38 @@ const Home = () => {
     <>
       <SeoMeta />
 
+      {/* 1. TOP OF FUNNEL (TOFU): AWARENESS & INTEREST
+          Goal: Hook the visitor with the core value proposition. */}
       <section className="section pt-14">
-        {/* <div >
-          <div className="row justify-center">
-
-
-
-            {banner.image && (
-              <div className="col-12">
-
-              </div>
-            )}
-          </div>
-        </div> */}
-
-        <div style={{minHeight:"100vh"}}>
-        <SplineClientComponent />
+        <div style={{}}>
+          <Vanta />
         </div>
       </section>
 
-      <TechStack data={techstack} />
+          <TechStack data={techstack} />
+      <Partners />
+
+      <a
+      href="https://wa.me/251933955241"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-500"
+    >
+      <FaWhatsapp size={28} />
+  </a>
+
+
+      <FeatureGrid />
+
+      <Projects />
+
+      <Testimonials data={testimonial} />
 
 
 
-    <Projects  />
-
-   <Partners />
-
-
-      {features.map((feature, index: number) => (
-        <section
-          key={index}
-          className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
-        >
-          <div className="container ">
-            <div className="row items-center justify-between">
-              <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
-              >
-                {/* <ImageFallback
-                  src={feature.image}
-                  height={480}
-                  width={520}
-                  alt={feature.title}
-                /> */}
-              </div>
-              <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
-              >
-                <h2
-                  className="mb-4"
-                  dangerouslySetInnerHTML={markdownify(feature.title)}
-                />
-                <p
-                  style={{ textAlign: "justify" }}
-                  className="mb-8 text-lg"
-                  dangerouslySetInnerHTML={markdownify(feature.content)}
-                />
-                <ul>
-                  {/* {feature.bulletpoints.map((bullet: string) => (
-                    <li className="relative mb-4 pl-6" key={bullet}>
-                      <FaCheck className={"absolute left-0 top-1.5"} />
-                      <span dangerouslySetInnerHTML={markdownify(bullet)} />
-                    </li>
-                  ))} */}
-                </ul>
-                {feature.button.enable && (
-                  <Link
-                    className="btn btn-primary mt-5"
-                    href={feature.button.link}
-                  >
-                    {feature.button.label}
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
 
       <CallToAction data={callToAction} />
+
     </>
   );
 };

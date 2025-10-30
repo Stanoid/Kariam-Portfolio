@@ -6,6 +6,7 @@ description: "Kariam is a software solution provider and a trusted partner for b
 # Testimonials
 testimonials:
 
+# import { Cloud, Database, TabletSmartphone, WandSparkles } from "lucide-react";
 
   - name: "Mobile Applications "
     designation: ""

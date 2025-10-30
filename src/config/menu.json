@@ -9,8 +9,8 @@
       "url": "/about"
     },
     {
-      "name": "Elements",
-      "url": "/elements"
+      "name": "Our Work",
+      "url": "../app/ourwrk/page.tsx"
     },
     {
       "name": "Pages",
