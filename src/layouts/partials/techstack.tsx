@@ -25,7 +25,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
   return (
     <>
       {data.frontmatter.enable && (
-        <section className="section">
+        <section className="section mt-4">
           <div className="container">
             <div className="row">
               <div className="mx-auto mb-12 text-left md:col-10 lg:col-8 xl:col-6">
@@ -69,7 +69,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                         <div style={{
                           height:"100%",
                           minHeight:400
-                        }} className="rounded-lg  bg-theme-light px-7 py-10 dark:bg-darkmode-theme-light">
+                        }} className="rounded-lg  px-7 py-10  bg-theme-light dark:bg-darkmode-theme-light">
 
                           {/* <blockquote
                             className="mt-8"
