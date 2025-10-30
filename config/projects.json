@@ -15,7 +15,7 @@
     {
       "id": "2",
       "title": "Profix Maintenance System",
-      "description": "A platform that tracks and manages maintenance schedules for water filter sales and services.",
+      "description": "A platformtti that tracks and manages maintenance schedules for water filter sales and services.",
       "image": "/images/profix.png",
       "details": "Built with Laravel and Filament, Profix enables admins, merchants, and salesmen to manage customer maintenance plans easily.",
       "link": "/projects/profix",
@@ -73,7 +73,7 @@
       "details": "Terminus is a custom platform that helps businesses monitor and control POS devices, generate sales analytics, and track team performance efficiently.",
       "link": "/projects/terminus-pos-tracker",
       "client": "Terminus",
-      "client_logo": "/images/terminus-logo.png",
+      "client_logo": "/images/Terminus-Logo-colored.png",
       "client_location": "Saudi Arabia",
       "project_date": "2024-09-05",
       "technologies": ["Laravel", "React", "Tailwind CSS", "MySQL", "REST API"]
@@ -90,19 +90,6 @@
       "client_location": "Khartoum, Sudan",
       "project_date": "2024-10-01",
       "technologies": ["Laravel", "React", "Tailwind CSS", "MySQL", "API Integration"]
-    },
-    {
-      "id": "8",
-      "title": "Hope ONG",
-      "description": "A humanitarian organization providing aid and support to refugees in Sudan and Algeria.",
-      "image": "/images/hope.jpg",
-      "details": "Hope ONG is focused on delivering essential services, resources, and programs for displaced communities in Sudan and Algeria.",
-      "link": "/projects/hope-ong",
-      "client": "Hope ONG",
-      "client_logo": "/images/hope-logo.png",
-      "client_location": "Sudan & Algeria",
-      "project_date": "2024-08-12",
-      "technologies": ["WordPress", "PHP", "SEO", "Multilingual Support"]
     }
 
   ]

@@ -8,6 +8,7 @@ import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaTools } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
+ import { Cloud, Database, TabletSmartphone, WandSparkles } from "lucide-react";
 
 interface PageData {
   notFound?: boolean;
@@ -75,7 +76,6 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                             dangerouslySetInnerHTML={markdownify(item.content)}
                           /> */}
 
-
 <div style={{marginBottom:20}} onClick={()=>{
 
 }} className="mt-11 flex items-center">
@@ -110,7 +110,7 @@ const TechStackEl = ({ data }: { data: PageData }) => {
                           }}>
                           {item.content.data.map(
                     (item: any, index: number) => (
-                     <div className="grayscale-0 dark:grayscale" style={{margin:15,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} key={index}>
+                     <div className="" style={{margin:15,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} key={index}>
                     <Image
                     src={item.icon}
                     width={50}

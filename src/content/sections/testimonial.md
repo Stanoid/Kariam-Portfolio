@@ -1,27 +1,37 @@
 ---
 enable: true
-title: "What Users Are Saying About Nextplate"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Nextplate."
+title: "What Clients Say About Working With Kariam"
+description: "From startups to established companies across Saudi Arabia, Sudan, and Algeria — here’s what some of our amazing clients have to say about their experience working with us."
 
-# Testimonials
 testimonials:
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "Sara Hamdi"
+    designation: "Brand Manager, Minimoon Algeria"
+    avatar: "/images/avatar-minimoon.jpg"
+    content: "The Minimoon eCommerce website exceeded our expectations — it’s modern, fast, and perfectly fits our Algerian market. Kariam was very responsive and understood every design detail."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "Eng. Ahmed Al Taawon"
+    designation: "Operations Director, Altaawon Factory"
+    avatar: "/images/avatar-altaawon.jpg"
+    content: "Professional work from start to finish. The bilingual factory website looks excellent, and our Google ranking improved thanks to the SEO optimization Kariam implemented."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "Osman Abdelrahman"
+    designation: "Founder, Dantech Electromechanical"
+    avatar: "/images/avatar-dantech.jpg"
+    content: "We needed a website that reflected our company’s technical quality — and Kariam delivered it perfectly. The site performs smoothly and looks great on mobile devices."
 
-  - name: "Marvin McKinney"
-    designation: "Web Designer"
-    avatar: "/images/avatar-sm.png"
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iusto illo molestias, assumenda expedita commodi inventore non itaque molestiae voluptatum dolore, facilis sapiente, repellat veniam."
+  - name: "Mohamed Yousif"
+    designation: "Founder, Smart Sudan"
+    avatar: "/images/avatar-smartsd.jpg"
+    content: "Our POS management system transformed how we handle sales and reports. Kariam built exactly what we envisioned — fast, secure, and scalable for our business needs."
+
+  - name: "Abdalla Ibrahim"
+    designation: "Project Manager, Terminus"
+    avatar: "/images/avatar-terminus.jpg"
+    content: "The Terminus POS tracker platform is powerful and efficient. Kariam’s Laravel and React expertise helped us launch a reliable solution used by our entire team daily."
+
+  - name: "Fatima Hassan"
+    designation: "Product Lead, Profix Maintenance System"
+    avatar: "/images/avatar-profix.jpg"
+    content: "The Profix platform simplified maintenance tracking for our team. Kariam’s attention to detail and ability to turn ideas into features was impressive."
+
 ---

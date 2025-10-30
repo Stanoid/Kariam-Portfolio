@@ -153,12 +153,6 @@ const Header = () => {
               <IoSearch />
             </button>
           )}
-             <button
-        onClick={toggleLang}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-      >
-        {lang === "en" ? "AR" : "EN"} {/* Shows the language you’ll switch to */}
-      </button>
           <ThemeSwitcher className="mr-5" />
           {navigation_button.enable && (
             <Link
